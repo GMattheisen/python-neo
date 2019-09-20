@@ -50,6 +50,8 @@ from io import open, BufferedReader
 import numpy as np
 
 
+logger = logging.getLogger("Neo")
+
 class AxonRawIO(BaseRawIO):
     extensions = ['abf']
     rawmode = 'one-file'
