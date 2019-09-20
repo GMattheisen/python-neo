@@ -41,7 +41,7 @@ from .baserawio import (BaseRawIO, _signal_channel_dtype, _unit_channel_dtype,
                         _event_channel_dtype)
 
 import numpy as np
-
+import logging 
 import struct
 import datetime
 import os
