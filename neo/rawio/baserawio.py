@@ -49,7 +49,7 @@ import os
 import sys
 
 from neo import logging_handler
-
+logger = logging.getLogger("Neo")
 try:
     import joblib
 
