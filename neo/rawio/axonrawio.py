@@ -61,6 +61,7 @@ class AxonRawIO(BaseRawIO):
         self.filename = filename
 
     def _parse_header(self):
+
         info = self._axon_info = parse_axon_soup(self.filename)
 
         version = info['fFileVersionNumber']
