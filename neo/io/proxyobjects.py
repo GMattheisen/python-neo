@@ -12,6 +12,7 @@ ineherits neo.rawio.
 
 import numpy as np
 import quantities as pq
+import logging
 
 from neo.core.baseneo import BaseNeo
 
@@ -23,7 +24,7 @@ from neo.core.dataobject import ArrayDict
 
 class BaseProxy(BaseNeo):
     def __init__(self, array_annotations=None, **annotations):
-        # this for py27 str vs py3 str in neo attributes ompatibility
+        # this for py27 str vs py3 str in neo attributes compatibility
         annotations = check_annotations(annotations)
         if 'file_origin' not in annotations:
             # the str is to make compatible with neo_py27 where attribute
