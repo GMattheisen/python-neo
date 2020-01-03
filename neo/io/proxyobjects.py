@@ -511,7 +511,7 @@ proxyobjectlist = [AnalogSignalProxy, SpikeTrainProxy, EventProxy,
 
 
 unit_convert = {'Volts': 'V', 'volts': 'V', 'Volt': 'V',
-                'volt': 'V', ' Volt': 'V', 'microV': 'V'}
+                'volt': 'V', ' Volt': 'V', 'microV': 'V', 'µV': 'V'}
 
 
 def ensure_signal_units(units):
