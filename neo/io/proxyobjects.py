@@ -94,6 +94,7 @@ class AnalogSignalProxy(BaseProxy):
         self._nb_chan = self._global_channel_indexes.size
 
         sig_chans = self._rawio.header['signal_channels'][self._global_channel_indexes]
+        return sig_chans['units']
 	
         assert np.unique(sig_chans['units']).size == 1, 'Channels do not have same units'
         assert np.unique(sig_chans['dtype']).size == 1, 'Channels do not have same dtype'
