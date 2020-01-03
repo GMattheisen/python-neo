@@ -95,9 +95,6 @@ class AnalogSignalProxy(BaseProxy):
 
         sig_chans = self._rawio.header['signal_channels'][self._global_channel_indexes]
 	
-        print(sig_chans['units'])
-        print(np.unique(sig_chans['units']).size)
-	
         assert np.unique(sig_chans['units']).size == 1, 'Channels do not have same units'
         assert np.unique(sig_chans['dtype']).size == 1, 'Channels do not have same dtype'
         assert np.unique(sig_chans['sampling_rate']).size == 1, \
@@ -119,6 +116,9 @@ class AnalogSignalProxy(BaseProxy):
                                                     np.all(sig_chans['offset'] == 0.)
 
         if support_raw_magnitude:
+            print("channel units", sig_chans['units'][0])
+            print("channel units", sig_chans['units'])
+            print("test", np.unique(sig_chans['units']).size)
             str_units = ensure_signal_units(sig_chans['units'][0]).units.dimensionality.string
             self._raw_units = pq.CompoundUnit('{}*{}'.format(sig_chans['gain'][0], str_units))
         else:
