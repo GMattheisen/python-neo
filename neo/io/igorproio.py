@@ -106,16 +106,14 @@ class IgorIO(BaseIO):
         elif self.extension == 'pxp':
             path = self.filename.replace('/',':')
             print("TEST", path)
-            print(type(path))
             assert type(path) is str, \
                 "A colon-separated Igor-style path must be provided."
             _, filesystem = pxp.load(self.filename)
             path = path.split(':')
             location = filesystem['root']
-            for element in path:
-                if element != 'root':
-                    location = location[element.encode('utf8')]
-            data = location.wave
+            for element in location:
+                 if hasattr(location[element],'wave') == True:
+                     data = location[element].
         content = data['wave']
         if "padding" in content:
             assert content['padding'].size == 0, \
