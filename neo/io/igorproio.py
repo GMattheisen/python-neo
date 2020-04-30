@@ -104,6 +104,7 @@ class IgorIO(BaseIO):
                 raise IOError(("Igor binary wave file format version {0} "
                                "is not supported.".format(version)))
         elif self.extension == 'pxp':
+            print(type(path))
             assert type(path) is str, \
                 "A colon-separated Igor-style path must be provided."
             _, filesystem = pxp.load(self.filename)
