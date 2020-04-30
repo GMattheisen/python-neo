@@ -112,9 +112,10 @@ class IgorIO(BaseIO):
             path = path.split(':')
             location = filesystem['root']
             for element in location:
-                 if hasattr(location[element],'wave') == True:
-                     data = location[element]
-                     content = data['wave']
+                if hasattr(location[element],'wave') == True:
+                    data = location[element
+                    print(data)
+                    content = data['wave']
         if "padding" in content:
             assert content['padding'].size == 0, \
                 "Cannot handle non-empty padding"
