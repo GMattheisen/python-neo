@@ -104,6 +104,7 @@ class IgorIO(BaseIO):
                 raise IOError(("Igor binary wave file format version {0} "
                                "is not supported.".format(version)))
         elif self.extension == 'pxp':
+            print("SELF", self)
             print("TEST", path)
             print(type(path))
             assert type(path) is str, \
