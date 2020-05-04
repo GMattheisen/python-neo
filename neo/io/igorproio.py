@@ -105,7 +105,6 @@ class IgorIO(BaseIO):
                                "is not supported.".format(version)))
         elif self.extension == 'pxp':
             path = self.filename.replace('/',':')
-            print("TEST", path)
             assert type(path) is str, \
                 "A colon-separated Igor-style path must be provided."
             _, filesystem = pxp.load(self.filename)
@@ -115,7 +114,6 @@ class IgorIO(BaseIO):
                 if hasattr(location[element],'wave') == True:
                     data = location[element].wave
                     content = data['wave']
-                    print("CONTENT", content)
         if "padding" in content:
             assert content['padding'].size == 0, \
                 "Cannot handle non-empty padding"
