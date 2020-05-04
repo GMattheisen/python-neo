@@ -114,7 +114,7 @@ class IgorIO(BaseIO):
             for element in location:
                 if hasattr(location[element],'wave') == True:
                     data = location[element].wave
-                    content = data['wave
+                    content = data['wave']
                     print("CONTENT", content)
         if "padding" in content:
             assert content['padding'].size == 0, \
