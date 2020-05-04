@@ -115,7 +115,7 @@ class IgorIO(BaseIO):
                 if hasattr(location[element],'wave') == True:
                     data = location[element]
                     print(data['wave'])
-                content = data['wave']
+                    content = data['wave']
         if "padding" in content:
             assert content['padding'].size == 0, \
                 "Cannot handle non-empty padding"
